@@ -1,1 +1,1 @@
-# berkata.github.io
+# berqata.github.io
