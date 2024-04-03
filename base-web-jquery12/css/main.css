@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "T1";
+    src:url(../src/fonts/Pulp\ Fiction\ M54.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Yatay alan dolduğunda alt satıra geç */
+    justify-content: space-around;
+    padding: 10px;
+}
+
+main div {
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid;
+    background-color:  rgb(207, 207, 207);
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Div'ler arasındaki boşluk */
+}
+
+main div img {
+    max-width: 100%; /* Resmin maksimum genişliği */
+    max-height: 80%; /* Resmin maksimum yüksekliği */
+    object-fit: contain;
+    object-position: center;
+}
+
+main div p {
+    margin-top: 10px;
+    font-family: "T1";
+    font-size: 20px;
+}
