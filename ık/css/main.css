@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "tre3";
+  src: url(src/fonts/Oxanium-ExtraBold.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "tre4";
+  src: url(src/fonts/Oxanium-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 40px;
+  padding: 40px;
+  background-color: #1d1d1d; 
+  color: #fefefe; 
+  line-height: 1.6;
+  font-family: "Oxanium";
+  font-size: 22px;
+}
+
+h1 {
+  color: #ffffff; 
+  text-align: center;
+  font-family: "tre3";
+}
+
+p {
+  margin-bottom: 20px;
+  text-align: justify;
+  font-family: "tre4";
+}
+
+.project {
+  background-color: #6b1111; 
+  border: 5px solid #b9b9b9;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.project h2 {
+  color: #4bc04b; 
+  font-family: "tre3";
+}
+
+.recognition,
+.examination,
+.future-projects {
+  background-color: #6b1111; 
+  padding: 40px;
+  margin: 40px 0;
+  border-radius: 5px;
+  border: 5px solid #b9b9b9;
+}
+
+.recognition h2,
+.examination h2,
+.future-projects h2 {
+  color: #1dc246;
+  margin-top: 20px;
+  font-family: "tre3";
+}
+.headimg {
+  display: block;
+  width: 500px;
+  border-radius: 5px;
+}
+
+.headimg1 {
+  display: block;
+  width: 500px;
+}
+
+.headimg2 {
+  display: block;
+  width: 500px;
+  margin-left: 0;
+}
+
+.headimg3 {
+  display: block;
+  width: 500px;
+}
+
+.headimg4 {
+  display: block;
+  width: 500px;
+}
+
+.headimg5 {
+  display: block;
+  width: 500px;
+}
+
+.headimg6 {
+  display: block;
+  width: 500px;
+}
+
+.headimg7 {
+  display: block;
+  width: 500px;
+}
+
+.headimg8 {
+  display: block;
+  width: 500px;
+}
+
+.headimg9 {
+  display: block;
+  width: 500px;
+}
+.image-container {
+  display: flex;
+  justify-content: flex-start;
+  border: 5px solid #00ff51ac; 
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+  font-size: 22.5px;
+}
+
+.image-container img {
+  width: 500px; 
+  border-radius: 5px;
+}
+
+.image-container p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.project img {
+  margin-right: 10px; 
+}
+
+.project div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+.video {
+  width: 560px;
+  height: 315px;
+  justify-content: center;
+  margin-top: 50px;
+}

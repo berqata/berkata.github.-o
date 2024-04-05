@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire Mystérieuse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #000;
+            color: #fff;
+        }
+        .conversation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .conversation {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-size: 24px;
+            max-width: 600px;
+            width: 80%;
+        }
+        .character {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 28px;
+        }
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .gif {
+            max-width: 300px;
+            height: auto;
+            display: none; /* GIF'leri varsayılan olarak gizleyin */
+        }
+    </style>
+</head>
+<body>
+    <div class="conversation-container">
+        <div class="conversation" id="part1">
+            <div class="gif-container">
+                <img src="src/img/gizemli_yabanci.gif" alt="Gizemli Yabancı" class="gif" id="gif1">
+            </div>
+            <p><span class="character">Étranger Mystérieux:</span> Bonjour, que faites-vous ici?</p>
+        </div>
+        <div class="conversation" id="part2" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gezgin.gif" alt="Gezgin" class="gif" id="gif2">
+            </div>
+            <p><span class="character">Voyageur:</span> Comment ça? Je ne sais pas qui vous êtes.</p>
+        </div>
+        <div class="conversation" id="part3" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gizemli_yabanci.gif" alt="Gizemli Yabancı" class="gif" id="gif3">
+            </div>
+            <p><span class="character">Étranger Mystérieux:</span> Vraiment? Voulez-vous aller dans un endroit plus mystérieux que moi?</p>
+        </div>
+        <div class="conversation" id="part4" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gezgin.gif" alt="Gezgin" class="gif" id="gif4">
+            </div>
+            <p><span class="character">Voyageur:</span> Je ne comprends pas ce que vous voulez dire.</p>
+        </div>
+        <div class="conversation" id="part5" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gizemli_yabanci.gif" alt="Gizemli Yabancı" class="gif" id="gif5">
+            </div>
+            <p><span class="character">Étranger Mystérieux:</span> Allez-vous au château de Badintent? Nous pouvons y résoudre un grand mystère.</p>
+        </div>
+        <div class="conversation" id="part6" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gezgin.gif" alt="Gezgin" class="gif" id="gif6">
+            </div>
+            <p><span class="character">Voyageur:</span> Je ne vous connais pas mais un voyage rempli de mystère m'intéresse toujours.</p>
+        </div>
+        <div class="conversation" id="part7" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gizemli_yabanci.gif" alt="Gizemli Yabancı" class="gif" id="gif7">
+            </div>
+            <p><span class="character">Étranger Mystérieux:</span> Alors rejoignez-nous. Partons sans tarder.</p>
+        </div>
+        <div class="conversation" id="part8" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gezgin.gif" alt="Gezgin" class="gif" id="gif8">
+            </div>
+            <p><span class="character">Voyageur:</span> Je ne sais pas à qui je peux faire confiance mais suivre un mystère est excitant.</p>
+        </div>
+        <div class="conversation" id="part9" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gizemli_yabanci.gif" alt="Gizemli Yabancı" class="gif" id="gif9">
+            </div>
+            <p><span class="character">Étranger Mystérieux:</span> Il est temps de partir pour le château de Badintent.</p>
+        </div>
+        <div class="conversation" id="part10" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gezgin.gif" alt="Gezgin" class="gif" id="gif10">
+            </div>
+            <p><span class="character">Voyageur:</span> Alors, étranger mystérieux, êtes-vous prêt à voyager avec moi?</p>
+        </div>
+        <div class="conversation" id="part11" style="display: none;">
+            <div class="gif-container">
+                <img src="src/img/gizemli_yabanci.gif" alt="Gizemli Yabancı" class="gif" id="gif11">
+            </div>
+            <p><span class="character">Étranger Mystérieux:</span> Bien sûr, que l'aventure commence.</p>
+        </div>
+    </div>
+
+    <script>
+        var currentPart = 1;
+
+        document.addEventListener('click', function() {
+            var nextPart = document.getElementById('part' + (currentPart + 1));
+            var currentGif = document.getElementById('gif' + currentPart);
+
+            if (nextPart) {
+                document.getElementById('part' + currentPart).style.display = 'none';
+                nextPart.style.display = 'block';
+                currentPart++;
+            }
+
+            // Gif dosyasını göster veya gizle
+            if (currentGif) {
+                currentGif.style.display = 'none';
+                var nextGif = document.getElementById('gif' + currentPart);
+                if (nextGif) {
+                    nextGif.style.display = 'block';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
