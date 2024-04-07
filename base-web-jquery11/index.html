@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+<body>
+    <section>
+        <h2> ONLINE DISCO </h2>
+
+        <h3>THIS SITE DESIGNED FOR YOUR OWN SPECIAL DISCO YOU CAN CHOOSE ANY SONG YOU</h3>
+        <h5> WANT AND DON'T FORGET TO HAVE FUN!</h5>
+        <h4>I write this code with Proccesing and if you like the code and use or modify by yourself feel free to do it the code is down below
+        </h4>
+        <p>
+            THE CODE:
+
+            int numSurfaces = 10; // Number of reflective surfaces
+            Surface[] surfaces; // Array to store surfaces
+            PVector lightSource; // Position of light source    
+       
+
+            void setup() {
+              size(1920, 1080);
+              surfaces = new Surface[numSurfaces];
+              for (int i = 0; i < numSurfaces; i++) {
+                surfaces[i] = new Surface(random(width), random(height), random(TWO_PI)); // Create random surfaces
+              }
+              lightSource = new PVector(width / 2, height / 2); // Set light source position
+            }
+        
+
+            
+            void draw() {
+              background(0);
+              
+              // Update and display surfaces
+              for (Surface surface : surfaces) {
+                surface.display();
+              }
+              
+              // Draw light source
+              fill(255, 255, 0); // Yellow light source
+              ellipse(lightSource.x, lightSource.y, 20, 20);
+              
+              // Draw light rays
+              for (float angle = 0; angle < TWO_PI; angle += PI / 180) {
+                PVector rayDirection = PVector.fromAngle(angle); // Ray direction
+                rayDirection.normalize(); // Normalize ray direction
+                
+                // Find intersection points with surfaces
+                float minDistance = Float.MAX_VALUE;
+                PVector intersection = null;
+                Surface closestSurface = null;
+                for (Surface surface : surfaces) {
+                  PVector point = surface.intersect(lightSource, rayDirection);
+                  if (point != null) {
+                    float distance = PVector.dist(lightSource, point);
+                    if (distance < minDistance) {
+                      minDistance = distance;
+                      intersection = point;
+                      closestSurface = surface;
+                    }
+                  }
+                }
+                
+                // Draw light ray
+                if (intersection != null) {
+                  float r = random(255);
+                  float g = random(255);
+                  float b = random(255);
+                  stroke(r, g, b, 100); // Random translucent ray
+                  line(lightSource.x, lightSource.y, intersection.x, intersection.y);
+                  
+                  // Calculate reflected ray direction
+                  PVector surfaceNormal = closestSurface.getNormal(intersection);
+                  PVector incident = PVector.sub(intersection, lightSource);
+                  PVector reflected = PVector.sub(incident, PVector.mult(surfaceNormal, 2 * incident.dot(surfaceNormal)));
+                  reflected.normalize();
+                  
+                  // Draw reflected ray
+                  stroke(r, g, b, 50); // Random translucent ray
+                  line(intersection.x, intersection.y, intersection.x + reflected.x * 1000, intersection.y + reflected.y * 1000);
+                }
+              }
+            }
+            
+            void mouseDragged() {
+              lightSource.set(mouseX, mouseY);
+            }
+            
+            class Surface {
+              PVector position; // Position of surface
+              float orientation; // Orientation of surface
+              
+              Surface(float x, float y, float orientation) {
+                position = new PVector(x, y);
+                this.orientation = orientation;
+              }
+              
+              void display() {
+                float r = random(255);
+                float g = random(255);
+                float b = random(255);
+                fill(r, g, b);
+                pushMatrix();
+                translate(position.x, position.y);
+                rotate(orientation);
+                rect(-100, -5, 200, 10); // Draw surface as a rectangle
+                popMatrix();
+              }
+              
+              PVector intersect(PVector origin, PVector direction) {
+                float den = cos(orientation) * direction.y - sin(orientation) * direction.x;
+                if (abs(den) > 0.0001) {
+                  float t = (sin(orientation) * (origin.x - position.x) - cos(orientation) * (origin.y - position.y)) / den;
+                  if (t >= 0) {
+                    return new PVector(origin.x + direction.x * t, origin.y + direction.y * t);
+                  }
+                }
+                return null;
+              }
+              
+              PVector getNormal(PVector point) {
+                return new PVector(cos(orientation), sin(orientation));
+              }
+            }
+        </p>
+       <h1>
+        <button class="btn btn1"><a href="/video.html">Heute Nacht-Maddix</a></button>
+        <button class="btn btn2"><a href="/video2.html">Hot Stuff-Techno Stutter</a></button>
+    </h1>
+
+       <script type="text/javascript" src="../js/particles.min.js"></script>
+    
+       <script type="text/javascript" src="../js/custom.js"></script>
+
+          </section>
+   
+
+    
+    
+</body>
+</html>
+ 

@@ -1,0 +1,166 @@
+@font-face {
+    font-family: "T1";
+    src:url(../src/fonts/Techno\ Various-Italic.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image:url( https://img1.picmix.com/output/stamp/normal/3/5/1/1/1321153_5c59f.gif);
+}
+ 
+p{
+    color: rgb(9, 255, 0);
+    
+}     
+
+h2 {
+    font-family:"T1";
+    font-size: 62px; /* istediğiniz boyuta uygun olarak ayarlayabilirsiniz */
+    color: rgb(9, 255, 0);
+    
+}
+h5 {
+    font-family:"T1";
+    font-size: 48px; /* istediğiniz boyuta uygun olarak ayarlayabilirsiniz */
+    color: rgb(9, 255, 0);
+    padding: 25px;
+}
+
+
+h3 {
+    font-family:"T1";
+    font-size: 48px; /* istediğiniz boyuta uygun olarak ayarlayabilirsiniz */
+    color: rgb(9, 255, 0);
+    padding: 25px;
+}
+
+h4 {
+    font-family:"T1";
+    font-size: 24px; /* istediğiniz boyuta uygun olarak ayarlayabilirsiniz */
+    color: rgb(172, 0, 141);
+    padding: 25px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+.midle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    
+}
+
+.btn a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    z-index:9999;
+}
+.btn1{
+    background: none;
+    border: 3px solid rgb(9, 255, 0);;
+    font-family:"T1";
+    text-transform: uppercase;
+    padding: 12px 20px;
+    min-width: 100px;
+    margin: 10px;
+    cursor:  pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index:9999;
+}
+
+.btn2{
+    background: none;
+    border: 3px solid rgb(9, 255, 0);;
+    font-family:"T1";
+    text-transform: uppercase;
+    padding: 12px 20px;
+    min-width: 100px;
+    margin: 10px;
+    cursor:  pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index:9999;
+}
+
+
+.btn:hover a{
+    color: #000000;
+}
+
+.btn1::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:  rgb(9, 255, 0);;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+
+}
+
+.btn2::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:  rgb(9, 255, 0);;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+
+}
+
+
+.btn1::before{
+    transform: scaleY(0);
+}
+
+.btn2::before{
+    transform: scaleY(0);
+}
+
+.btn1:hover::before{
+    transform: scaleY(1);
+}
+
+.btn2:hover::before{
+    transform: scaleY(1);
+}
+
+#bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    
+}
